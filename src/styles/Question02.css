@@ -1,0 +1,21 @@
+.prize{
+   margin-right: 10px;
+   font-size: 25px;
+}
+.last{
+    font-size: 25px;
+}
+.myResult{
+    font-size: 30px;
+    color: red;
+}
+.lotteryButton{
+    border: none;
+    padding: 7px 15px;
+    border-radius: 7px;
+    background-color: rgb(92, 163, 255);
+    color: white;
+}
+.lotteryButton:hover{
+    color: yellow;
+}

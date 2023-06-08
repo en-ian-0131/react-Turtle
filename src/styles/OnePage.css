@@ -1,0 +1,222 @@
+
+section{
+    padding: 0px 124px;
+}
+
+/* Navbar */
+.myNavbar > div > a > img{
+    width: 95px;
+    height: 95px;
+}
+.myNavbar > div > ul > li > a{
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight:600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #677510;
+}
+
+.sec1Botton{
+    width: 70px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #b5cc22;
+    color: white;
+}
+
+/* section 2 */
+
+.sec2p{
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.18em;
+    color: #B5CC22;
+    margin: 30px;
+}
+
+/* section3 */
+/* .sec3{
+    height: 25vh;
+} */
+.sec3Inputs{
+    position: relative;
+}
+.selectOption{
+    position: absolute;
+    top: 50px;
+}
+
+.sec3FirstInput{
+    color: #AEAEAE;
+}
+.sec3FirstInputColor{
+    width: 175px;
+    height: 40px;
+    padding-left: 15px;
+    background-color:#F6F6F6;
+    border: none;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    color:#B5CC22;
+}
+
+.sec3SecondInput{
+    color: #AEAEAE;
+    width: 277px;
+    height: 40px;
+    padding-left: 15px;
+    background-color:#F6F6F6;
+    border: none;
+    border-radius: 7px;
+    position: relative;
+    color: #B5CC22;
+}
+.sec3FirstIcon{
+    transform: translate(-30px,-3px);
+}
+.sec3SecondIcon{
+    transform: translate(-30px);
+}
+.checkOption{
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+
+}
+.checkOption > input {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+.selectOption{
+    width: 175px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #F6F6F6;
+}
+.selectOption > button{
+    border:none;
+    background-color: #F6F6F6;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    padding: 10px;
+    margin-bottom: 0px;
+} 
+.selectOption > button:hover{
+    border-radius: 5px;
+    color: #B5CC22;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+} 
+
+/* section 4 */
+.sec4Table{
+    border-radius: 20px;
+    overflow: hidden;
+    outline: 1px solid rgb(199, 199, 199);
+}
+.trTitle > th > span{
+    color: white;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
+.trTitle > th{
+    padding: 20px;
+}
+.trTd > td > span{
+    color: #B5CC22;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+}
+.trTd > td{
+    padding: 20px;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.trTitle > th > i{
+    padding-left: 10px;
+    color: white;
+}
+.arFilter{
+    width: 277px;
+    background-color: #F6F6F6;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    left: 185px;
+    padding: 10px;
+}
+.arFilter > button{
+    border: none;
+    background-color: #F6F6F6;
+    padding: 15px;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+}
+.arFilter > button:hover{
+    border: none;
+    background-color: #F6F6F6;
+    padding: 15px;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    color: #B5CC22;
+}
+
+.sortButtonDefault{
+    margin:10px;
+    border:none;
+    padding: 5px 10px;
+    background-color: rgb(199, 199, 199);
+    border-radius: 7px;
+}
+.sortButtonClick{
+    margin:10px;
+    border:none;
+    padding: 5px 10px;
+    background-color: #B5CC22;
+    border-radius: 7px;
+    color: white;
+}
+
+.page{
+    color:#677510;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
