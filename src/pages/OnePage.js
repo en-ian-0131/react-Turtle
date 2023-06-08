@@ -1,10 +1,14 @@
-import React, { useEffect, useState, Fragment } from 'react'
+import React, { useEffect, useState, Fragment, useContext, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/OnePage.css'
 import MyChecked from '../components/MyChecked'
 import axios from 'axios'
 import districtsData from '../data/Taiwan.json'
+import { NavbarContext } from '../components/NavbarContext'
 
 function OnePage() {
+  const { menu, setMenu, page, setPage } = useContext(NavbarContext)
+  const animation = useRef(null)
   //接收 open Data 資料
   const [myData, setMyData] = useState([])
   //呈現
@@ -222,6 +226,7 @@ function OnePage() {
               setArInputShow(false)
             }}
           ></i>
+          {/* 站點搜尋結果 */}
           {arInputShow ? (
             <div className="arFilter d-flex flex-column align-items-start">
               {cityOnlyTaipei(
@@ -244,7 +249,119 @@ function OnePage() {
           ) : (
             ''
           )}
-
+          {/* 站點搜尋 input RWD*/}
+          <input
+            type="text"
+            className="sec3SecondInputRWD"
+            placeholder="搜尋站點..."
+            value={arInputValue}
+            onClick={() => {
+              if (arInputValue === '搜尋站點...' || arInputValue) {
+                setArInputValue('')
+                setDisplay(myData)
+              }
+            }}
+            onChange={(e) => {
+              setArInputValue(e.target.value)
+              setArInputShow(true)
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                setKeyword(arInputValue)
+                setArInputShow(false)
+              }
+            }}
+          />
+          <i
+            className="fa-solid fa-magnifying-glass sec3SecondIconRWD"
+            onClick={() => {
+              setKeyword(arInputValue)
+              setArInputShow(false)
+            }}
+          ></i>
+          {/* 站點搜尋結果 RWD */}
+          {arInputShow ? (
+            <div className="arFilterRWD d-flex flex-column align-items-start ">
+              {cityOnlyTaipei(
+                arFilterDisplay(myData, arInputValue),
+                cityInputValue
+              ).map((v, i) => {
+                return (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      setArInputValue(v.sna)
+                      setArInputShow(false)
+                    }}
+                  >
+                    {v.sna}
+                  </button>
+                )
+              })}
+            </div>
+          ) : (
+            ''
+          )}
+          {/* 縣市搜尋 input RWD */}
+          <input
+            type="text"
+            id="sec3FirstInputId"
+            className={
+              cityInputValue === '請輸入縣市...'
+                ? 'sec3FirstInput'
+                : 'sec3FirstInputColorRWD'
+            }
+            placeholder={cityInput}
+            value={cityInputValue}
+            onClick={() => {
+              if (cityInput === '請輸入縣市...' || cityInputValue) {
+                setCityInput('')
+                setCityInputValue('')
+                setArInputValue('')
+              }
+            }}
+            onChange={(e) => {
+              setCityInputValue(e.target.value)
+              setCityInputShow(true)
+            }}
+            onBlur={(e) => {
+              if (e.type === 'blur') {
+                setCityInput('請輸入縣市...')
+              }
+            }}
+          />
+          <i
+            className="fa-solid fa-sort-down sec3FirstIconRWD"
+            onClick={() => {
+              if (cityInputValue) {
+                setCityInputValue('')
+              }
+              setCityInputShow(!cityInputShow)
+              setArInputValue('')
+              setArInputShow(false)
+            }}
+          ></i>
+          {/* 縣市搜尋解果 RWD */}
+          {cityInputShow ? (
+            <div className="selectOptionRWD">
+              {cityInputOfSearch(city, cityInputValue).map((v, i) => {
+                return (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      // setCity(v)
+                      setCityInputValue(v.name)
+                      setCityInputShow(false)
+                    }}
+                  >
+                    {v.name}
+                  </button>
+                )
+              })}
+            </div>
+          ) : (
+            ''
+          )}
           {/* city checkedBox 勾選的部分 */}
           {cityInputValue === '' ? (
             ''
@@ -730,16 +847,16 @@ function OnePage() {
         <table className="table table-striped sec4Table">
           <thead>
             <tr style={{ backgroundColor: '#B5cc22' }} className="trTitle">
-              <th className="text-center">
+              <th className="text-center col-3 col-lg-2">
                 <span>縣市</span>
               </th>
-              <th className="text-center">
+              <th className="text-center col-3 col-lg-2">
                 <span>區域</span>
               </th>
-              <th className="text-center">
+              <th className="text-center col-lg-4">
                 <span>站點名稱</span>
               </th>
-              <th className="text-center">
+              <th className="text-center RWDNone">
                 <span>可借車輛</span>
 
                 {sbiSortType === 'ase' ? (
@@ -760,7 +877,7 @@ function OnePage() {
                   ></i>
                 )}
               </th>
-              <th className="text-center">
+              <th className="text-center RWDNone">
                 <span>可還空位</span>
 
                 {bempSortType === 'ase' ? (
@@ -791,10 +908,10 @@ function OnePage() {
                     <td className="text-center">台北市</td>
                     <td className="text-center"> {v.sarea}</td>
                     <td className="text-center">{v.sna}</td>
-                    <td className="text-center quantityColor">
+                    <td className="text-center quantityColor RWDNone">
                       <span>{v.sbi}</span>
                     </td>
-                    <td className="text-center quantityColor">
+                    <td className="text-center quantityColor RWDNone">
                       <span>{v.bemp}</span>
                     </td>
                   </tr>
@@ -805,8 +922,8 @@ function OnePage() {
                 <td className="text-center">目前尚未開放~</td>
                 <td className="text-center">-</td>
                 <td className="text-center">-</td>
-                <td className="text-center">-</td>
-                <td className="text-center">-</td>
+                <td className="text-center RWDNone">-</td>
+                <td className="text-center RWDNone">-</td>
               </tr>
             )}
           </tbody>

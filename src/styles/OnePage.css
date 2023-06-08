@@ -4,6 +4,7 @@ section{
 }
 
 /* Navbar */
+
 .myNavbar > div > a > img{
     width: 95px;
     height: 95px;
@@ -16,6 +17,9 @@ section{
     line-height: 24px;
     color: #677510;
 }
+.menuBar{
+    display: none;
+}
 
 .sec1Botton{
     width: 70px;
@@ -24,6 +28,12 @@ section{
     border: none;
     background-color: #b5cc22;
     color: white;
+}
+
+.mask{
+    display: none;
+    width: 375px;
+    background-color: #b5cc22;
 }
 
 /* section 2 */
@@ -46,11 +56,9 @@ section{
 .sec3Inputs{
     position: relative;
 }
-.selectOption{
-    position: absolute;
-    top: 50px;
-}
 
+
+/* firstInput */
 .sec3FirstInput{
     color: #AEAEAE;
 }
@@ -64,7 +72,14 @@ section{
     margin-bottom: 20px;
     color:#B5CC22;
 }
+.sec3FirstInputColorRWD{
+    display: none;
+}
+.sec3FirstIconRWD{
+    display: none;
+}
 
+/* secondInput */
 .sec3SecondInput{
     color: #AEAEAE;
     width: 277px;
@@ -76,12 +91,20 @@ section{
     position: relative;
     color: #B5CC22;
 }
+.sec3SecondInputRWD{
+    display: none;
+}
+.sec3SecondIconRWD{
+    display: none;
+}
 .sec3FirstIcon{
     transform: translate(-30px,-3px);
 }
 .sec3SecondIcon{
     transform: translate(-30px);
 }
+
+
 .checkOption{
     font-family: 'Noto Sans CJK TC';
     font-style: normal;
@@ -91,7 +114,6 @@ section{
     display: flex;
     align-items: center;
     padding: 15px;
-
 }
 .checkOption > input {
     width: 18px;
@@ -103,6 +125,8 @@ section{
     border-radius: 10px;
     padding: 15px;
     background-color: #F6F6F6;
+    position: absolute;
+    top: 50px;
 }
 .selectOption > button{
     border:none;
@@ -184,6 +208,13 @@ section{
     font-size: 18px;
     line-height: 20px;
 }
+.arFilterRWD > button{
+    display: none;
+}
+.selectOptionRWD > button{
+    display: none;
+}
+
 .arFilter > button:hover{
     border: none;
     background-color: #F6F6F6;
@@ -219,4 +250,254 @@ section{
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
+}
+
+@media screen and (max-width:376px) {
+
+section{
+    padding:0px 32px;
+}
+
+/* Navbar */
+.container{
+    padding: 0px 32px;
+}
+.myNavbar > div > a > img{
+    width: 65px;
+    height: 65px;
+}
+.menuBar{
+    display: block;
+}
+.sec1Botton{
+    display: none;
+}
+.myNavbar > div > ul > li{
+    display: none;
+}
+
+.sec1Botton{
+    width: 70px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #b5cc22;
+    color: white;
+}
+
+
+
+/* section 1 */
+
+.sec2p{
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.18em;
+    color: #B5CC22;
+    margin:0px;
+    margin-top: 24px;
+}
+
+/* firstInput */
+.sec3FirstInputColorRWD{
+    display: block;
+    width: 311px;
+    height: 40px;
+    padding-left: 15px;
+    background-color:#F6F6F6;
+    border: none;
+    border-radius: 7px;
+    color:#B5CC22;
+    position: relative;
+}
+.sec3FirstIconRWD{
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 73px;
+}
+.sec3FirstInputColor{
+    display: none;
+}
+.sec3FirstIcon{
+    display: none;
+}
+.selectOption{
+    display: none;
+}
+.selectOptionRWD{
+    width: 175px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #F6F6F6;
+    position: absolute;
+    top: 95px;
+}
+.selectOptionRWD > button{
+    display: block;
+    border:none;
+    background-color: #F6F6F6;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    padding: 10px;
+    margin-bottom: 0px;
+} 
+.selectOptionRWD > button:hover{
+    border-radius: 5px;
+    color: #B5CC22;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+}
+
+
+/* secondInput */
+.sec3SecondInput{
+    display: none;
+}
+.sec3SecondInputRWD{
+    display: block;
+    color: #AEAEAE;
+    width: 311px;
+    height: 40px;
+    padding-left: 15px;
+    background-color:#F6F6F6;
+    border: none;
+    border-radius: 7px;
+    position: relative;
+    color: #B5CC22;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+.sec3SecondIconRWD{
+    display: block;
+    color: #AEAEAE;
+    position: absolute;
+    top:30px ;
+    right: 20px;
+}
+.sec3SecondIcon{
+    display: none;
+}
+.arFilter{
+    display: none;
+}
+.arFilter > button{
+    display: none;
+}
+.arFilterRWD{
+    display: block;
+    width: 311px;
+    background-color: #F6F6F6;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    padding: 10px;
+    z-index: 10;
+}
+.arFilterRWD > button{
+    display: block;
+    border: none;
+    background-color: #F6F6F6;
+    padding: 15px;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+/* checkbox */
+.checkOption{
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.RWDNone{
+    display: none;
+}
+.trTitle > th {
+    padding: 15px 5px;
+}
+.trTitle > th > span{
+    color: white;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.trTd > td > span{
+    color: #B5CC22;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+}
+.trTd > td{
+    padding: 5px 10px;
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;    
+    text-align: center;
+}
+/* mask */
+.mask{
+    display: block;
+    width: 375px;
+    height: 89vh;
+    background-color: #b5cc22;
+    position: relative;
+}
+.maskUl{
+    padding: 32px;
+}
+.RWDPage{
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.18em;
+    color: white;
+    margin-bottom: 32px;
+}
+.RWDLoginBotton{
+    font-family: 'Noto Sans CJK TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    padding: 10px 24px;
+    border-radius: 100px;
+    border: none;
+    color: #B5CC22;
+    position: absolute;
+    bottom:32px;
+    left:32px;
+}
+
 }

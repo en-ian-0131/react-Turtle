@@ -28,9 +28,7 @@ function Question02() {
 
   const lottery = () => {
     const rand = Number(Math.floor(Math.random() * 1000))
-    console.log(rand)
-
-    ifZero(range(rand, initValue))
+    handleIfZero(rand, initValue)
   }
 
   //過濾被抽完的
@@ -127,6 +125,10 @@ function Question02() {
         }
       }
     }
+  }
+
+  const handleIfZero = (rand, initValue) => {
+    ifZero(range(rand, initValue))
   }
 
   return (

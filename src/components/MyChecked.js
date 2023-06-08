@@ -9,7 +9,7 @@ function MyChecked({ vData }) {
   return (
     <>
       {/* 全部勾選 */}
-      <div className="checkOption d-flex">
+      <div className="checkOption d-flex col-12">
         <input
           type="checkbox"
           checked={optionAllCheck}
@@ -22,7 +22,7 @@ function MyChecked({ vData }) {
       {/* 單獨勾選 */}
       {newDistricts.map((v, i) => {
         return (
-          <div className="checkOption" key={i}>
+          <div className="checkOption col-auto col-lg-4" key={i}>
             {optionAllCheck ? (
               <CheckAllTrue
                 optionAllCheck={optionAllCheck}
