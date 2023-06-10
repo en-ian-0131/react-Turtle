@@ -334,7 +334,7 @@ section{
     padding: 15px;
     background-color: #F6F6F6;
     position: absolute;
-    top: 95px;
+    top: 110px;
 }
 .selectOptionRWD > button{
     display: block;
@@ -348,16 +348,6 @@ section{
     letter-spacing: 0.1px;
     padding: 10px;
     margin-bottom: 0px;
-} 
-.selectOptionRWD > button:hover{
-    border-radius: 5px;
-    color: #B5CC22;
-    font-family: 'Noto Sans CJK TC';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 20px;
-    letter-spacing: 0.1px;
 }
 
 
@@ -390,8 +380,9 @@ section{
     display: none;
 }
 .arFilter{
-    display: none;
+   background-color: transparent;
 }
+
 .arFilter > button{
     display: none;
 }
@@ -402,10 +393,10 @@ section{
     border-radius: 10px;
     overflow: hidden;
     position: absolute;
-    top: 50px;
+    top: 65px;
     left: 0px;
     padding: 10px;
-    z-index: 10;
+    z-index: 5;
 }
 .arFilterRWD > button{
     display: block;
@@ -463,13 +454,33 @@ section{
     text-align: center;
 }
 /* mask */
+.myMask{
+    /* overflow: hidden; */
+}
+
+
 .mask{
     display: block;
     width: 375px;
     height: 89vh;
     background-color: #b5cc22;
     position: relative;
+    transition: 5s;
+    right: 0px;
 }
+
+
+.maskOpen{
+    display: block;
+    width: 375px;
+    height: 89vh;
+    background-color: #b5cc22;
+    position: relative;
+    transition: 1s;
+   right: 0px;
+}
+
+
 .maskUl{
     padding: 32px;
 }
